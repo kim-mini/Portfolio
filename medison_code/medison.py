@@ -19,7 +19,7 @@ import shutil
 #단, UI파일은 Python 코드 파일과 같은 디렉토리에 위치해야한다.
 form_class = uic.loadUiType("medison.ui")[0]
 
-path = '/home/ubuntu/mini_project/pill.csv'
+path = './pill.csv'
 
 if os.path.isfile(path):
     pass
@@ -36,13 +36,12 @@ class FindMedison(QMainWindow, form_class):
         # 약 정보가 들어있는 데이터를 데이터 프레임으로 만들기
         self.df = pd.read_csv(path)
 
-        self.result_url = '/home/ubuntu/mini_project/drug_image_dataset/'
+        self.result_url = './drug_image_dataset/'
         # 이미지를 저장할 경로 지정
 
-
-
         self.medlist.setText('Found my medison!')
-        self.cnt = 0
+        self.Fbtn.setText('찾기')
+        self.cnt = 1
 
     def initUI(self):
         self.box1.currentTextChanged.connect(self.BackFind)
@@ -51,6 +50,7 @@ class FindMedison(QMainWindow, form_class):
         self.box4.currentTextChanged.connect(self.BackFind)
         self.medlist2.currentTextChanged.connect(self.selectmed)
 
+        self.savebnt.clicked.connect(self.SaveImg)
         self.Fbtn.clicked.connect(self.Findbtnpush)
         self.nextbtn.clicked.connect(self.NextImg)
         self.undobtn.clicked.connect(self.UndoImg)
@@ -110,6 +110,7 @@ class FindMedison(QMainWindow, form_class):
         #self.ImgSave()
 
         print(self.dstdf['큰제품이미지'][self.cnt],type(self.dstdf['큰제품이미지'][self.cnt]))
+
         self.ImgShow()
 
         if len(self.dstdf) ==0:
@@ -122,53 +123,52 @@ class FindMedison(QMainWindow, form_class):
             self.medlist.append(medisonName)
             self.medlist2.addItem(medisonName)
 
-
-
-
     def ImgSave(self):
-
-        #for i in range(len(self.dst)):
-        filename = os.path.join(self.result_url, re.split('[<,>,\[,\],/,-,(,),1,2,3,4,5,6,7,8,9,0. :]', self.dstdf['품목명'])[self.cnt] + '.jpg')
-        # ~urlretrieve(a,b) : a에 가서 이미지를 b로 저장
-        urllib.request.urlretrieve(self.dstdf['큰제품이미지'], filename)
-        # re.split('[/,-,(,). :]' : 품목명에 아스코푸정(히벤즈산티페피딘) --> 아스코푸정 이렇게 나오도록 하려고 해준다
+        self.qPixmapSaveVar = self.medImg.pixmap()
+        self.qPixmapSaveVar.save(self.result_url + '/' + self.FileName)
 
     def ImgShow(self):
+        self.FileName = re.split('[<,>,\[,\],/,-,(,),1,2,3,4,5,6,7,8,9,0. :]', self.dstdf['품목명'][self.cnt])[0] + '.jpg'
         urlString = self.dstdf['큰제품이미지'][self.cnt]
 
-
-        for i in os.listdir(self.result_url):
-            if i == (re.split('[<,>,\[,\],/,-,(,),1,2,3,4,5,6,7,8,9,0. :]', self.dstdf['품목명'][self.cnt])[0] + '.jpg'):
-                self.Imgurl = os.path.join(self.result_url,i)
-
-
-        self.Imgurl = urllib.request.urlopen(urlString).read()
-
         self.qPixmapFileVar = QPixmap()
-        self.qPixmapFileVar.loadFromData(self.Imgurl)
+
+        if os.path.exists(self.result_url + '/' + self.FileName):
+            self.Imgurl = os.path.join(self.result_url,self.FileName)
+
+            self.qPixmapFileVar.load(self.Imgurl)
+        else:
+            self.Imgurl = urllib.request.urlopen(urlString).read()
+            self.qPixmapFileVar.loadFromData(self.Imgurl)
+
         self.qPixmapFileVar = self.qPixmapFileVar.scaledToHeight(140)
         self.medImg.setPixmap(self.qPixmapFileVar)
 
-        self.medinfo.append(re.split('[<,>,\[,\],/,-,(,),1,2,3,4,5,6,7,8,9,0. :]', self.dstdf['품목명'][self.cnt])[0] + '.jpg')
+        self.medinfo.append(self.FileName)
         self.medinfo.append(self.dstdf['분류명'][self.cnt])
         self.medinfo.append(self.dstdf['업소명'][self.cnt])
         self.medinfo.append(self.dstdf['성상'][self.cnt])
+        if not (os.path.exists(self.result_url+'/'+self.FileName)):
+            self.ImgSave()
 
     def SaveImg(self):
+        print('savebtn')
+        if not (os.path.exists('./Mymedison')):
+            os.mkdir('./Mymedison')
         self.qPixmapSaveVar = self.medImg.pixmap()
-        self.qPixmapSaveVar.save("SavedImage.jpg")
+        self.qPixmapSaveVar.save(SavePath+'/'+self.FileName)
 
     def NextImg(self):
+        if self.cnt == len(self.dstdf)-1:
+            self.cnt = 1
         self.cnt += 1
-        if self.dstdf['큰제품이미지'][self.cnt] is None:
-            self.cnt -= 1
-
         self.ImgShow()
 
     def UndoImg(self):
         self.cnt -= 1
-        if self.dstdf['큰제품이미지'][self.cnt] is None:
-            self.cnt += 1
+
+        if self.cnt == -1:
+            self.cnt = len(self.dstdf)-1
 
         self.ImgShow()
 
@@ -184,7 +184,7 @@ class FindMedison(QMainWindow, form_class):
                 self.qPixmapFileVar.loadFromData(Imgurl)
                 self.qPixmapFileVar = self.qPixmapFileVar.scaledToHeight(140)
                 self.medImg.setPixmap(self.qPixmapFileVar)
-        self.ImgSave()
+
 
 
 if __name__ == "__main__" :
