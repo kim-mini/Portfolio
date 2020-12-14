@@ -1,6 +1,6 @@
 # Pill-Search
 
-[![](https://img.shields.io/badge/-Tech%20Blog-green)](https://blog.naver.com/kimmin2_/222167393246)
+[![](https://img.shields.io/badge/-Tech%20Blog-green)](https://blog.naver.com/kimmin2_/222156139740)
 
 ---
 
