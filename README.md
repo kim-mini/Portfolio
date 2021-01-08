@@ -1,10 +1,12 @@
-# Pill-Search
-
-[![](https://img.shields.io/badge/-Tech%20Blog-green)](https://blog.naver.com/kimmin2_/222156139740)
+# ML/DL
 
 ---
 
-```buildoutcfg
-약의 특징을 입력받아 해당 이미지 출력
-```
-<img src="hps://blogfiles.pstatic.net/MjAyMDEyMDhfMTU1/MDAxNjA3NDM3MjczNTM1.rkres0wk2KOF1RFUUgVqj0PHkfjbiVnTquGwI_svozsg.88gQsTjGMYwb639JZtFH_y0rWCGHWriSZFRRSgTHw5wg.PNG.kimmin2_/SE-fe1cb840-f88f-4a09-8c-83996761f79c.png" width="30%">
+ - ### study
+
+   - [Dogs vs Cats](https://github.com/kim-mini/STUDY/tree/main/20201201) : 
+
+   - [자연어 처리 공부](https://github.com/kim-mini/Data-science/tree/main/natural_language_processing) : 자연어(natural language)란 우리가 일상 생활에서 사용하는 언어를 말합니다 자연어 처리(natural language processing)란 이러한 자연어의 의미를 분석하여 컴퓨터가 처리할 수 있도록 하는 일을 말합니다 자연어 처리를 위한 데이터 전처리부터 공부했습니다
+   
+   - [web_scraping / web crawling](https://github.com/kim-mini/Data-science/tree/main/web_scraping) : Web상에 존재하는 Contents를 수집하는 작업 (프로그래밍으로 자동화 가능) HTML 페이지를 가져와서, HTML/CSS등을 파싱하고, 필요한 데이터만 추출하는 곳에 사용됩니다
+
