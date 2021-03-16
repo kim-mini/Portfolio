@@ -1,3 +1,7 @@
+# Final project
+
+ - ### [sprinkle](https://github.com/kim-mini/sprinkle)
+ - 
 # ML/DL
 
  - ### study
@@ -13,7 +17,6 @@
    - [모두를 위한 딥러닝](https://blog.naver.com/kimmin2_/222168130361)[![](https://img.shields.io/badge/-source%20code-green)](https://github.com/kim-mini/ML-DL/tree/main/DL/tensorflow) : 모두를 위한 딥러닝 시즌 1 (Tensorflow) - 김성훈 교수님 
    
    - [sprinkle project](https://github.com/kim-mini/sprinkle/tree/main/datacustom) : 자연어처리 한국어 문장 data 생성 및 data augmentation
-
 
 
 # Image_processing
