@@ -28,11 +28,6 @@
 
 # Image_processing
 
-  - 이미지 전처리에 대해 공부했습니다
-
-<details>
-    <summary>source code list -------------------------------------------- < click</summary>
-    <div markdown="1">
 
 - [opencv-01](https://github.com/kim-mini/independent-study/blob/main/source_code/opencv_01)
 - [rotate](https://github.com/kim-mini/independent-study/blob/main/source_code/openCV_rotate.py)
@@ -52,8 +47,8 @@
 - [basic video editer](https://github.com/kim-mini/independent-study#basic-video-editer)
 - [photo works](https://github.com/kim-mini/independent-study#photo-works)
 
-    </div>
-</details>
+ 
+---
 
  - ### yolo custom data set
 
