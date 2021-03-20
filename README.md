@@ -1,7 +1,18 @@
 # Final project
 
  - ### [sprinkle](https://github.com/kim-mini/sprinkle)
+<<<<<<< HEAD
  - 
+=======
+ ```
+  인공지능 또는 AI는 인간의 학습능력, 추론능력, 지각능력, 그외에 인공적으로 구현한 컴퓨터 프로그램 또는 이를 포함한 컴퓨터 시스템이다. 
+  이 기술은 사용자의 음성명령에 따라 일정 관리, 이메일 전송, 식당 예약 등 여러 작업을 수행하여 사람의 편의성을 높이는 데 큰 기여를 한다. 
+  본 프로젝트는 인공 지능(AI) 엔진, 음성 인식 및 모션 인식을 기반으로 스마트폰과 인공 지능 스피커에서 서비스를 제공한다. 
+  스마트폰과 인공 지능 스피커를 이용하여 사용자에게 맞춤 정보를 수집하고 제공할 뿐만 아니라 
+  음성과 제스처를 통하여 기기들과 연동된 스마트 가전기기를 사용할 수 있도록 하는 것을 목표로 하고 있다
+   ```
+
+>>>>>>> 2ca7704251193da3ddcb47675646557bb596396e
 # ML/DL
 
  - ### study
@@ -21,11 +32,6 @@
 
 # Image_processing
 
-  - 이미지 전처리에 대해 공부했습니다
-
-<details>
-    <summary>source code list -------------------------------------------- < click</summary>
-    <div markdown="1">
 
 - [opencv-01](https://github.com/kim-mini/independent-study/blob/main/source_code/opencv_01)
 - [rotate](https://github.com/kim-mini/independent-study/blob/main/source_code/openCV_rotate.py)
@@ -45,10 +51,8 @@
 - [basic video editer](https://github.com/kim-mini/independent-study#basic-video-editer)
 - [photo works](https://github.com/kim-mini/independent-study#photo-works)
 
-    </div>
-</details>
-
-
+ 
+---
 
  - ### yolo custom data set
 
