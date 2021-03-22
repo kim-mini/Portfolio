@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>train2</folder>
+	<filename>pill_343.JPG</filename>
+	<path>/home/ubuntu/Documents/pill-dataset/train2/pill_343.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>|</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>274</xmin>
+			<ymin>189</ymin>
+			<xmax>299</xmax>
+			<ymax>263</ymax>
+		</bndbox>
+	</object>
+</annotation>

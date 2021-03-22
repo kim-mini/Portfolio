@@ -2,12 +2,12 @@ import os
 import cv2
 
 # 원본파일이 있는 경로
-path = "../../pill-dataset/test"
+path = "../../pill-dataset/add"
 listTmp =os.listdir(path)
 # 저장할 경로
-Savepath = "../../pill-dataset/test2"
+Savepath = "../../pill-dataset/add2"
 # 파일이름+숫자.JPG
-num = 0
+num = 500
 save_name = f'pill_test_{num}.JPG'
 
 for filename in listTmp:
@@ -20,4 +20,4 @@ for filename in listTmp:
         cv2.imwrite( Savefile, dst )
         #print(Savefile)
         num+=1
-        save_name = f'pill_test_{num}.JPG'
+        save_name = f'pill_{num}.JPG'

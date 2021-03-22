@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>add2</folder>
+	<filename>pill_562.JPG</filename>
+	<path>/home/ubuntu/Documents/pill-dataset/add2/pill_562.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>capsule</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>215</xmin>
+			<ymin>233</ymin>
+			<xmax>369</xmax>
+			<ymax>287</ymax>
+		</bndbox>
+	</object>
+</annotation>
