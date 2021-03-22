@@ -4,7 +4,7 @@ from image_rotation import deskew
 
 
 
-img = cv2.imread( './dataset/train/class30_train_1.jpg', cv2.IMREAD_GRAYSCALE )
+img = cv2.imread( './dataset/train/class20_train_1.jpg', cv2.IMREAD_GRAYSCALE )
 # 원하는 부분 마스크 영역 생성
 b_bg = np.zeros_like(img)
 cv2.circle(b_bg, (638,479), 410, (255, 255, 255), -1)
@@ -40,10 +40,10 @@ if ( x > 30 ):
 if ( y > 100 ):
     ry = y - 100
 
-dst = dst[ ry:y+h+100, rx:x+w+100]
+dst = dst[ ry:y+h+100, rx:x+w+30]
+print(dst.shape)
 image = deskew(dst)
-cv2.imshow( 'image3', dst )
-cv2.imshow( 'image1', image )
+cv2.imshow( 'image', image )
 cv2.waitKey(0)
 
 
