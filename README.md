@@ -1,8 +1,7 @@
 # Final project
 
  - ### [sprinkle](https://github.com/kim-mini/sprinkle)
-<<<<<<< HEAD
- - 
+
 =======
  ```
   인공지능 또는 AI는 인간의 학습능력, 추론능력, 지각능력, 그외에 인공적으로 구현한 컴퓨터 프로그램 또는 이를 포함한 컴퓨터 시스템이다. 
